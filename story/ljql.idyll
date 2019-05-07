@@ -105,31 +105,31 @@
 [var name: "right18" value: "其它垃圾" /]
 [var name: "right19" value: "其它垃圾" /]
 [var name: "right20" value: "其它垃圾" /]
-[var name: "styleDiv" value: `{display: "flex" }` /]
-[var name: "center" value: `{display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column", marginRight: "90px"}` /]
+[var name: "styleDiv" value: `{display: "flex", justifyContent: "space-around" }` /]
+[var name: "center" value: `{display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column"}` /]
 [var name: "centerNoMargin" value: `{display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column"}` /]
+[var name: "tmDiv" value: `{display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column"}` /]
+
 [img  src:"https://assets.amzport.com/haitang/app/dati/ljfl.jpg" /]
 [Conditional if:` !isSubmit `]
 中国每年使用塑料快餐盒达40亿个，方便面碗5~7亿个，废塑料占生活垃圾的4~7%。一吨废塑料可回炼600公斤的柴油。回收1500吨废纸，可免于砍伐用于生产1200吨纸的林木。生产垃圾中有30%~40%可以回收利用，垃圾分类，珍惜资源，人人有责。
 
 # 垃圾分类---问答卷
 [/Conditional]
-[Conditional if:` isSubmit `]
+[Conditional if:` !isSubmit `]
 [div style: styleDiv]
     [div style: center]
         ###答对
-        [Display value:`xSquared/5` /]题
+        [Display value:`xSquared/5` format: "d"/]题
     [/div]
     [div style: center]
         ###总分
         [Display value:xSquared /]分
     [/div]
-[/div]
-[div style: styleDiv]
     [div style: center]
         ###用时
         [Display value: useDate /]秒
-    [/div]
+     [/div]
 [/div]
 [div style: centerNoMargin]
         [img src:"https://assets.amzport.com/haitang/miniqr/story-486" /]
@@ -201,9 +201,11 @@
 [/Conditional]
 [Conditional if:` !isSubmit `]
     [Conditional if:` subjectCount >= 0 `]
+
         ## 1.蛋壳
         [img src:"https://assets.amzport.com/haitang/app/dati/danke.jpg" /]
         [HtRadio step: 1 stepSitu: subjectCount value:radio1 options:`[{img: cylj ,value:'厨余垃圾'}, {img: khsw ,value:'可回收物'}, {img: yhlj ,value:'有害垃圾'}, {img: qtlj ,value:'其它垃圾'}]`  /]
+
     [/Conditional]
     [Conditional if:` subjectCount >= 1 `]
         ## 2.废电池

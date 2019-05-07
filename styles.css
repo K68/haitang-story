@@ -129,12 +129,6 @@ input[type=radio]:not(old):checked +  label > span > span{
   max-width: 200px;
   max-height: 300px;
   border-radius: 8px;
-  margin: 12px 0px;
-}
-.idyll-text-container > div > div {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 .a {
   margin: 0 25px;
