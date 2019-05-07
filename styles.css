@@ -79,4 +79,81 @@ input[type=radio]:not(old):checked +  label > span > span{
   background-image : -webkit-linear-gradient(rgb(179,217,140),rgb(153,204,102));
   background-image :         linear-gradient(rgb(179,217,140),rgb(153,204,102));
 }
-
+.idyll-action {
+  display: block;
+  border-radius: 6px;
+  height: 45px;
+  line-height: 45px;
+  text-align: center;
+  color: #fff;
+  font-size: 16px;
+  background: #1ea0fa;
+  width: 200px;
+  margin: 25px auto ;
+}
+.idyll-root{
+  padding: 0px 0px;
+  margin-bottom: 0px;
+}
+.idyll-text-container {
+  background: #fff;
+  width: 100%;
+  padding: 45px 35px;
+  margin: 0 auto;
+  max-width: none;
+  box-sizing: border-box;
+}
+.idyll-text-container > img {
+  width: 100%;
+}
+.idyll-text-container > p {
+  font-size: 18px;
+  color: #16455e;
+}
+.idyll-text-container > h1{
+  text-align: center;
+  font-size: 26px;
+  margin-top: 60px;
+}
+.idyll-text-container > h2{
+  font-size: 16px;
+  margin: 25px 0px;
+}
+.idyll-text-container > div > img{
+  max-width: 200px;
+  max-height: 300px;
+  border-radius: 8px;
+  margin: 12px 0px;
+}
+.idyll-text-container > div > div > img{
+  max-width: 200px;
+  max-height: 300px;
+  border-radius: 8px;
+  margin: 12px 0px;
+}
+.a {
+  margin: 0 25px;
+  width: 200px;
+  border-radius: 8px;
+}
+.alertSy{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.16);
+}
+.inDivSy{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  padding: 100px;
+  background: white;
+  border-radius: 5px;
+  font-size: 20px;
+}
+#idyll-mount > div > div > div > div:nth-child(2) {
+  text-align: center;
+}

@@ -1,0 +1,327 @@
+[derived name:'xSquared' value:`0 +
+ (radio1 === right1? 5:0) +
+ (radio2 === right2? 5:0) +
+ (radio3 === right3? 5:0) +
+ (radio4 === right4? 5:0) +
+ (radio5 === right5? 5:0) +
+ (radio6 === right6? 5:0) +
+ (radio7 === right7? 5:0) +
+ (radio8 === right8? 5:0) +
+ (radio9 === right9? 5:0) +
+ (radio10 === right10? 5:0) +
+ (radio11 === right11? 5:0) +
+ (radio12 === right12? 5:0) +
+ (radio13 === right13? 5:0) +
+ (radio14 === right14? 5:0) +
+ (radio15 === right15? 5:0) +
+ (radio16 === right16? 5:0) +
+ (radio17 === right17? 5:0) +
+ (radio18 === right18? 5:0) +
+ (radio19 === right19? 5:0) +
+ (radio20 === right20? 5:0)`
+  /]
+[derived name:'isDw' value: `radio1 &&
+    radio2&&
+    radio3&&
+    radio4&&
+    radio5&&
+    radio6&&
+    radio7&&
+    radio8&&
+    radio9&&
+    radio10&&
+    radio11&&
+    radio12&&
+    radio13&&
+    radio14&&
+    radio15&&
+    radio16&&
+    radio17&&
+    radio18&&
+    radio19&&
+    radio20`
+/]
+
+[var name: "cylj" value: "https://assets.amzport.com/haitang/app/dati/cylj.jpg" /]
+[var name: "qtlj" value: "https://assets.amzport.com/haitang/app/dati/qtlj.jpg" /]
+[var name: "khsw" value: "https://assets.amzport.com/haitang/app/dati/khsw.jpg" /]
+[var name: "yhlj" value: "https://assets.amzport.com/haitang/app/dati/yhlj.jpg" /]
+[var name: "actionStyle" value: ` {
+                                    display: "block",
+                                    borderRadius: "6px",
+                                    height: "45px",
+                                    lineHeight: "45px",
+                                    textAlign: "center",
+                                    color: "#fff",
+                                    fontSize: "16px",
+                                    background: "#1ea0fa",
+                                    width: "200px",
+                                    margin: "25px auto",
+                                    textDecoration: "none"
+                                 }`
+/]
+[var name: "subjectCount" value: 0 /]
+[var name: "startDate" value: `new Date().getTime()` /]
+[var name: "useDate" value: 0 /]
+[var name: "isSubmit" value: false /]
+[var name: "radio1" value: false /]
+[var name: "radio2" value: false /]
+[var name: "radio3" value: false /]
+[var name: "radio4" value: false /]
+[var name: "radio5" value: false /]
+[var name: "radio6" value: false /]
+[var name: "radio7" value: false /]
+[var name: "radio8" value: false /]
+[var name: "radio9" value: false /]
+[var name: "radio10" value: false /]
+[var name: "radio11" value: false /]
+[var name: "radio12" value: false /]
+[var name: "radio13" value: false /]
+[var name: "radio14" value: false /]
+[var name: "radio15" value: false /]
+[var name: "radio16" value: false /]
+[var name: "radio17" value: false /]
+[var name: "radio18" value: false /]
+[var name: "radio19" value: false /]
+[var name: "radio20" value: false /]
+
+[var name: "right1" value: "厨余垃圾" /]
+[var name: "right2" value: "厨余垃圾" /]
+[var name: "right3" value: "厨余垃圾" /]
+[var name: "right4" value: "厨余垃圾" /]
+[var name: "right5" value: "厨余垃圾" /]
+[var name: "right6" value: "厨余垃圾" /]
+[var name: "right7" value: "有害垃圾" /]
+[var name: "right8" value: "有害垃圾" /]
+[var name: "right9" value: "有害垃圾" /]
+[var name: "right10" value: "有害垃圾" /]
+[var name: "right11" value: "有害垃圾" /]
+[var name: "right12" value: "可回收物" /]
+[var name: "right13" value: "可回收物" /]
+[var name: "right14" value: "可回收物" /]
+[var name: "right15" value: "可回收物" /]
+[var name: "right16" value: "可回收物" /]
+[var name: "right17" value: "其它垃圾" /]
+[var name: "right18" value: "其它垃圾" /]
+[var name: "right19" value: "其它垃圾" /]
+[var name: "right20" value: "其它垃圾" /]
+[var name: "styleDiv" value: `{display: "flex" }` /]
+[var name: "center" value: `{display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column", marginRight: "90px"}` /]
+[img  src:"https://assets.amzport.com/haitang/app/dati/ljfl.jpg" /]
+[Conditional if:` !isSubmit `]
+中国每年使用塑料快餐盒达40亿个，方便面碗5~7亿个，废塑料占生活垃圾的4~7%。一吨废塑料可回炼600公斤的柴油。回收1500吨废纸，可免于砍伐用于生产1200吨纸的林木。生产垃圾中有30%~40%可以回收利用，垃圾分类，珍惜资源，人人有责。
+
+# 垃圾分类---问答卷
+[/Conditional]
+[Conditional if:` isSubmit `]
+[div style: styleDiv]
+    [div style: center]
+        ###答对
+        [Display value:`xSquared/5` /]题
+    [/div]
+    [div style: center]
+        ###总分
+        [Display value:xSquared /]分
+    [/div]
+[/div]
+[div style: styleDiv]
+    [div style: center]
+        ###用时
+        [Display value: useDate /]秒
+    [/div]
+[/div]
+[div style: center]
+        [img src:"https://assets.amzport.com/haitang/miniqr/story-486" /]
+        ####截屏分享,传播知识
+    [/div]
+[Conditional if:` xSquared/5 === 20 `]
+    ###错误的题目极其正确答案
+[/Conditional]
+    [Conditional if:` radio1 !== right1 `]
+        [Display value: `"1.蛋壳属于  " + right1` /]
+    [/Conditional]
+    [Conditional if:` radio10 !== right10 `]
+       [Display value: `"2.废电池属于  " + right10` /]
+    [/Conditional]
+    [Conditional if:` radio11 !== right11 `]
+        [Display value: `"3.废油漆桶属于  " + right11` /]
+    [/Conditional]
+    [Conditional if:` radio19 !== right19 `]
+       [Display value: `"4.卫生间废纸属于  " + right19` /]
+    [/Conditional]
+    [Conditional if:` radio12 !== right12 `]
+       [Display value: `"5.废报纸属于  " + right12` /]
+    [/Conditional]
+    [Conditional if:` radio13 !== right13 `]
+       [Display value: `"6.饮料盒属于  " + right13` /]
+    [/Conditional]
+    [Conditional if:` radio14 !== right14 `]
+       [Display value: `"7.塑料盆属于  " + right14` /]
+    [/Conditional]
+    [Conditional if:` radio5 !== right5 `]
+        [Display value: `"8.果皮属于  " + right5` /]
+    [/Conditional]
+    [Conditional if:` radio6 !== right6 `]
+       [Display value: `"9.茶渣属于  " + right16` /]
+    [/Conditional]
+    [Conditional if:` radio15 !== right15 `]
+       [Display value: `"10.玻璃杯属于  " + right15` /]
+     [/Conditional]
+    [Conditional if:` radio2 !== right2 `]
+        [Display value: `"11.剩菜剩饭属于  " + right2` /]
+    [/Conditional]
+    [Conditional if:` radio3 !== right3 `]
+       [Display value: `"12.骨头属于  " + right3` /]
+    [/Conditional]
+    [Conditional if:` radio4 !== right4 `]
+      [Display value: `"13.菜根属于  " + right4` /]
+    [/Conditional]
+    [Conditional if:` radio7 !== right7 `]
+       [Display value: `"14.废日光灯管属于  " + right7` /]
+    [/Conditional]
+    [Conditional if:` radio8 !== right8 `]
+       [Display value: `"15.废水银温度计属于  " + right8` /]
+    [/Conditional]
+    [Conditional if:` radio9 !== right9 `]
+       [Display value: `"16.过期药品属于  " + right9` /]
+    [/Conditional]
+    [Conditional if:` radio16 !== right16 `]
+      [Display value: `"17.易拉罐属于  " + right16` /]
+    [/Conditional]
+    [Conditional if:` radio17 !== right17 `]
+        [Display value: `"18.陶瓷属于  " + right17` /]
+    [/Conditional]
+    [Conditional if:` radio18 !== right18 `]
+        [Display value: `"19.渣土属于  " + right18` /]
+    [/Conditional]
+    [Conditional if:` radio20 !== right20 `]
+     [Display value: `"20.盆景等植物的残枝落叶属于  " + right20` /]
+    [/Conditional]
+[/Conditional]
+[Conditional if:` !isSubmit `]
+    [Conditional if:` subjectCount >= 0 `]
+        ## 1.蛋壳
+        [img src:"https://assets.amzport.com/haitang/app/dati/danke.jpg" /]
+        [HtRadio step: 1 stepSitu: subjectCount value:radio1 options:`[{img: cylj ,value:'厨余垃圾'}, {img: khsw ,value:'可回收物'}, {img: yhlj ,value:'有害垃圾'}, {img: qtlj ,value:'其它垃圾'}]`  /]
+    [/Conditional]
+    [Conditional if:` subjectCount >= 1 `]
+        ## 2.废电池
+        [img src:"https://assets.amzport.com/haitang/app/dati/dianchi.jpg" /]
+        [HtRadio step: 2 stepSitu: subjectCount value:radio10 options:`[{img: cylj ,value:'厨余垃圾'}, {img: khsw ,value:'可回收物'}, {img: yhlj ,value:'有害垃圾'}, {img: qtlj ,value:'其它垃圾'}]`  /]
+    [/Conditional]
+    [Conditional if:` subjectCount >= 2 `]
+        ## 3.废油漆桶
+        [img src:"https://assets.amzport.com/haitang/app/dati/youqitong.jpg" /]
+        [HtRadio step: 3 stepSitu: subjectCount value:radio11 options:`[{img: cylj ,value:'厨余垃圾'}, {img: khsw ,value:'可回收物'}, {img: yhlj ,value:'有害垃圾'}, {img: qtlj ,value:'其它垃圾'}]`  /]
+    [/Conditional]
+
+    [Conditional if:` subjectCount >= 3 `]
+        ## 4.卫生间废纸
+        [img src:"https://assets.amzport.com/haitang/app/dati/wsjfz.jpg" /]
+        [HtRadio step: 4 stepSitu: subjectCount value:radio19 options:`[{img: cylj ,value:'厨余垃圾'}, {img: khsw ,value:'可回收物'}, {img: yhlj ,value:'有害垃圾'}, {img: qtlj ,value:'其它垃圾'}]`  /]
+     [/Conditional]
+
+    [Conditional if:` subjectCount >= 4 `]
+        ## 5.废报纸
+        [img src:"https://assets.amzport.com/haitang/app/dati/feibaozhi.jpg" /]
+        [HtRadio step: 5 stepSitu: subjectCount value:radio12 options:`[{img: cylj ,value:'厨余垃圾'}, {img: khsw ,value:'可回收物'}, {img: yhlj ,value:'有害垃圾'}, {img: qtlj ,value:'其它垃圾'}]`  /]
+    [/Conditional]
+
+    [Conditional if:` subjectCount >= 5 `]
+        ## 6.饮料盒
+        [img src:"https://assets.amzport.com/haitang/app/dati/yinliaohe.jpg" /]
+        [HtRadio step: 6 stepSitu: subjectCount value:radio13 options:`[{img: cylj ,value:'厨余垃圾'}, {img: khsw ,value:'可回收物'}, {img: yhlj ,value:'有害垃圾'}, {img: qtlj ,value:'其它垃圾'}]`  /]
+     [/Conditional]
+
+    [Conditional if:` subjectCount >= 6 `]
+        ## 7.塑料盆
+        [img src:"https://assets.amzport.com/haitang/app/dati/suliaopen.jpg" /]
+        [HtRadio step: 7 stepSitu: subjectCount value:radio14 options:`[{img: cylj ,value:'厨余垃圾'}, {img: khsw ,value:'可回收物'}, {img: yhlj ,value:'有害垃圾'}, {img: qtlj ,value:'其它垃圾'}]`  /]
+     [/Conditional]
+
+    [Conditional if:` subjectCount >= 7 `]
+        ## 8.果皮
+        [img src:"https://assets.amzport.com/haitang/app/dati/guopi.jpg" /]
+        [HtRadio step: 8 stepSitu: subjectCount value:radio5 options:`[{img: cylj ,value:'厨余垃圾'}, {img: khsw ,value:'可回收物'}, {img: yhlj ,value:'有害垃圾'}, {img: qtlj ,value:'其它垃圾'}]`  /]
+     [/Conditional]
+
+    [Conditional if:` subjectCount >= 8 `]
+        ## 9.茶渣
+        [img src:"https://assets.amzport.com/haitang/app/dati/chazha.jpg" /]
+        [HtRadio step: 9 stepSitu: subjectCount value:radio6 options:`[{img: cylj ,value:'厨余垃圾'}, {img: khsw ,value:'可回收物'}, {img: yhlj ,value:'有害垃圾'}, {img: qtlj ,value:'其它垃圾'}]` /]
+     [/Conditional]
+
+    [Conditional if:` subjectCount >= 9 `]
+        ## 10.玻璃杯
+        [img src:"https://assets.amzport.com/haitang/app/dati/bolibei.jpg" /]
+        [HtRadio step: 10 stepSitu: subjectCount value:radio15 options:`[{img: cylj ,value:'厨余垃圾'}, {img: khsw ,value:'可回收物'}, {img: yhlj ,value:'有害垃圾'}, {img: qtlj ,value:'其它垃圾'}]`  /]
+     [/Conditional]
+
+    [Conditional if:` subjectCount >= 10 `]
+        ## 11.剩菜剩饭
+        [img src:"https://assets.amzport.com/haitang/app/dati/shengcai.jpg" /]
+        [HtRadio step: 11 stepSitu: subjectCount value:radio2 options:`[{img: cylj ,value:'厨余垃圾'}, {img: khsw ,value:'可回收物'}, {img: yhlj ,value:'有害垃圾'}, {img: qtlj ,value:'其它垃圾'}]`  /]
+     [/Conditional]
+
+    [Conditional if:` subjectCount >= 11 `]
+        ## 12.骨头
+        [img src:"https://assets.amzport.com/haitang/app/dati/gutou.jpeg" /]
+        [HtRadio step: 12 stepSitu: subjectCount value:radio3 options:`[{img: cylj ,value:'厨余垃圾'}, {img: khsw ,value:'可回收物'}, {img: yhlj ,value:'有害垃圾'}, {img: qtlj ,value:'其它垃圾'}]`  /]
+     [/Conditional]
+
+    [Conditional if:` subjectCount >= 12 `]
+        ## 13.菜根
+        [img src:"https://assets.amzport.com/haitang/app/dati/caigen.jpg" /]
+        [HtRadio step: 13 stepSitu: subjectCount value:radio4 options:`[{img: cylj ,value:'厨余垃圾'}, {img: khsw ,value:'可回收物'}, {img: yhlj ,value:'有害垃圾'}, {img: qtlj ,value:'其它垃圾'}]`  /]
+     [/Conditional]
+
+    [Conditional if:` subjectCount >= 13 `]
+        ## 14.废日光灯管
+        [img src:"https://assets.amzport.com/haitang/app/dati/rgdg.jpg" /]
+        [HtRadio step: 14 stepSitu: subjectCount value:radio7 options:`[{img: cylj ,value:'厨余垃圾'}, {img: khsw ,value:'可回收物'}, {img: yhlj ,value:'有害垃圾'}, {img: qtlj ,value:'其它垃圾'}]`  /]
+     [/Conditional]
+
+    [Conditional if:` subjectCount >= 14 `]
+        ## 15.废水银温度计
+        [img src:"https://assets.amzport.com/haitang/app/dati/sywdj.jpg" /]
+        [HtRadio step: 15 stepSitu: subjectCount value:radio8 options:`[{img: cylj ,value:'厨余垃圾'}, {img: khsw ,value:'可回收物'}, {img: yhlj ,value:'有害垃圾'}, {img: qtlj ,value:'其它垃圾'}]`  /]
+     [/Conditional]
+
+    [Conditional if:` subjectCount >= 15 `]
+        ## 16.过期药品
+        [img src:"https://assets.amzport.com/haitang/app/dati/gqyp.png" /]
+        [HtRadio step: 16 stepSitu: subjectCount value:radio9 options:`[{img: cylj ,value:'厨余垃圾'}, {img: khsw ,value:'可回收物'}, {img: yhlj ,value:'有害垃圾'}, {img: qtlj ,value:'其它垃圾'}]`  /]
+     [/Conditional]
+
+    [Conditional if:` subjectCount >= 16 `]
+        ## 17.易拉罐
+        [img src:"https://assets.amzport.com/haitang/app/dati/yilaguan.jpg" /]
+        [HtRadio step: 17 stepSitu: subjectCount value:radio16 options:`[{img: cylj ,value:'厨余垃圾'}, {img: khsw ,value:'可回收物'}, {img: yhlj ,value:'有害垃圾'}, {img: qtlj ,value:'其它垃圾'}]`  /]
+     [/Conditional]
+
+    [Conditional if:` subjectCount >= 17 `]
+        ## 18.陶瓷
+        [img src:"https://assets.amzport.com/haitang/app/dati/taoci.jpg" /]
+        [HtRadio step: 18 stepSitu: subjectCount value:radio17 options:`[{img: cylj ,value:'厨余垃圾'}, {img: khsw ,value:'可回收物'}, {img: yhlj ,value:'有害垃圾'}, {img: qtlj ,value:'其它垃圾'}]`  /]
+     [/Conditional]
+
+    [Conditional if:` subjectCount >= 18 `]
+        ## 19.渣土
+        [img src:"https://assets.amzport.com/haitang/app/dati/zhatu.jpg" /]
+        [HtRadio step: 19 stepSitu: subjectCount value:radio18 options:`[{img: cylj ,value:'厨余垃圾'}, {img: khsw ,value:'可回收物'}, {img: yhlj ,value:'有害垃圾'}, {img: qtlj ,value:'其它垃圾'}]`  /]
+    [/Conditional]
+
+    [Conditional if:` subjectCount >= 19 `]
+        ## 20.盆景等植物的残枝落叶
+        [img src:"https://assets.amzport.com/haitang/app/dati/canzhi.jpg" /]
+        [HtRadio step: 20 stepSitu: subjectCount value:radio20 options:`[{img: cylj ,value:'厨余垃圾'}, {img: khsw ,value:'可回收物'}, {img: yhlj ,value:'有害垃圾'}, {img: qtlj ,value:'其它垃圾'}]`  /]
+    [/Conditional]
+    [Conditional if:` !isSubmit && subjectCount >= 20 `]
+        [action style: actionStyle onClick:`if(isDw){
+        isSubmit = true;
+        useDate = (new Date().getTime() - startDate)/1000
+        }else{
+        alert("题目没答完")
+        }`]提交[/action]
+    [/Conditional]
+[/Conditional]
