@@ -107,6 +107,7 @@
 [var name: "right20" value: "其它垃圾" /]
 [var name: "styleDiv" value: `{display: "flex" }` /]
 [var name: "center" value: `{display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column", marginRight: "90px"}` /]
+[var name: "centerNoMargin" value: `{display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column"}` /]
 [img  src:"https://assets.amzport.com/haitang/app/dati/ljfl.jpg" /]
 [Conditional if:` !isSubmit `]
 中国每年使用塑料快餐盒达40亿个，方便面碗5~7亿个，废塑料占生活垃圾的4~7%。一吨废塑料可回炼600公斤的柴油。回收1500吨废纸，可免于砍伐用于生产1200吨纸的林木。生产垃圾中有30%~40%可以回收利用，垃圾分类，珍惜资源，人人有责。
@@ -130,7 +131,7 @@
         [Display value: useDate /]秒
     [/div]
 [/div]
-[div style: center]
+[div style: centerNoMargin]
         [img src:"https://assets.amzport.com/haitang/miniqr/story-486" /]
         ####截屏分享,传播知识
     [/div]
