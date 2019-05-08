@@ -9,7 +9,7 @@ class QrPic extends React.Component {
     }
     componentDidMount() {
         const prefix = 'https://assets.amzport.com/haitang/miniqr/story-';
-        let id = 486;
+        let id = 0;
         const bool = typeof(window)=='undefined';
         if(!bool){
             id = window.location.pathname.match(/\/story\/(.*?)\//)[1];
