@@ -12,7 +12,7 @@ class QrPic extends React.Component {
         let id = 486;
         const bool = typeof(window)=='undefined';
         if(!bool){
-            id = window.location.pathname.match(/\/story\/(.*?)\//);
+            id = window.location.pathname.match(/\/story\/(.*?)\//)[1];
         }
         if(!bool){
             this.setState({

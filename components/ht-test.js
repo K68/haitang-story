@@ -17,9 +17,9 @@ class HtTest extends React.Component {
         const that = this;
         this.queryAnswer(function (jsCg) {
             that.setState({
-                grade: jsCg.data[1],
-                times: jsCg.data[2],
-                num: jsCg.data[0],
+                grade: parseInt(jsCg.data[1], 10),
+                times: parseInt(jsCg.data[2], 10),
+                num: parseInt(jsCg.data[0],10),
             });
         },  `${datiKey}${id}`)
     }
