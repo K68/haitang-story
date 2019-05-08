@@ -16,7 +16,9 @@ class IndexComponents extends React.Component {
       }
     return (
         <div style={{ height: '60px'}}>
-          <div onClick={backHome} style={{ width: '50px', height: '36px', margin: '12px', borderRadius: '5px', background: 'rgba(123, 123, 123, 0.5)', position: 'fixed', top:0, left:0, color: '#fafafa', lineHeight: '36px', textAlign: 'center', fontWeight: '800' }}>主页</div>
+          <div onClick={backHome} style={{ width: '36px', height: '35px', margin: '12px', borderRadius: '5px', position: 'fixed', top:34, right:24, color: '#fafafa', lineHeight: '36px', textAlign: 'center', fontWeight: '800' }}>
+               <img src="https://assets.amzport.com/haitang/app/dati/home.png" style={{ width: '100%', height: '100%', backgroundColor: 'transparent' }}/>
+          </div>
         </div>
     );
   }
