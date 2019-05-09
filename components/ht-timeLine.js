@@ -13,7 +13,7 @@ class HtTimeline extends React.Component {
         const itemSyr = e.target.value || e.target.getAttribute('data-value');
         const item = JSON.parse(itemSyr);
         this.props.updateProps({
-            value: item.value,
+            value: item.name,
             isAppearList: list,
             time: item.time,
             gain: item.gain,
@@ -25,9 +25,9 @@ class HtTimeline extends React.Component {
         <div {...props} style={{ margin: '8px 0' }}>
           <div>
             {options.map((item, idx) => (
-              <div key={item.value + idx} style={{ width: '50%', display: 'inline-block', textAlign: 'center' }}>
-                  <input onChange={this.increment.bind(this)} type="radio" name={`radio${index}`} checked={isAppearList[index] && value === item.value} value={JSON.stringify(item)} />
-                  <label><span><span></span></span>{item.value}</label>
+              <div key={item.name + idx} style={{ width: '50%', display: 'inline-block', textAlign: 'center' }}>
+                  <input onChange={this.increment.bind(this)} type="radio" name={`radio${index}`} checked={isAppearList[index] && value === item.name} value={JSON.stringify(item)} />
+                  <label><span><span></span></span>{item.name}</label>
                   {item.img ? <img onClick={this.increment.bind(this)} data-value={JSON.stringify(item)} style={{ maxWidth: 64, maxHeight: 64, margin: 'auto', }} src={item.img} alt="" /> : null}
               </div>
             ))}
