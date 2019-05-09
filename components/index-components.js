@@ -3,6 +3,8 @@ const React = require('react');
 class IndexComponents extends React.Component {
   render() {
       function backHome() {
+          const url = `https://m.amap.com/search/view/keywords=${cityValue}${schoolInfo.orName}`;
+          let ua = window.navigator.userAgent.toLowerCase(); // eslint-disable-line
           const href = window.location.search;
           if (href.indexOf('om=p') > -1 && window.wx) {
               wx.miniProgram.navigateBack();
@@ -10,6 +12,8 @@ class IndexComponents extends React.Component {
               wx.miniProgram.redirectTo({
                   url: '/pages/index/index',
               });
+          } else if (ua.match(/MicroMessenger/i) == 'micromessenger') {
+              window.open('https://hi.amzport.com/app/'); // eslint-disable-line
           } else {
               history.back()
           }
