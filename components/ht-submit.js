@@ -12,10 +12,10 @@ class HtSubmit extends React.Component {
             let id = 486;
             const bool = typeof(window)=='undefined';
             if(!bool){
-                id = window.location.pathname.match(/\/story\/(.*?)\//);
+                id = window.location.pathname.match(/\/story\/(.*?)\//)[1];
             }
             var xhr = new XMLHttpRequest();
-            xhr.open("POST", "https://hi.amzport.com/api/data/queryAnswer", true);
+            xhr.open("POST", "https://hi.amzport.com/api/data/setAnswer", true);
             xhr.setRequestHeader("Content-Type", "application/json");
             xhr.send(JSON.stringify({
                 datiKey: `${datiKey}${id}`,

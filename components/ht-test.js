@@ -12,14 +12,14 @@ class HtTest extends React.Component {
         let id = 486;
         const bool = typeof(window)=='undefined';
         if(!bool){
-            id = window.location.pathname.match(/\/story\/(.*?)\//);
+            id = window.location.pathname.match(/\/story\/(.*?)\//)[1];
         }
         const that = this;
         this.queryAnswer(function (jsCg) {
             that.setState({
-                grade: jsCg.data[1],
-                times: jsCg.data[2],
-                num: jsCg.data[0],
+                grade: parseInt(jsCg.data[1], 10),
+                times: parseInt(jsCg.data[2], 10),
+                num: parseInt(jsCg.data[0],10),
             });
         },  `${datiKey}${id}`)
     }
