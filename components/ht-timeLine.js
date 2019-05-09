@@ -21,6 +21,7 @@ class HtTimeline extends React.Component {
     };
   render() {
     const { hasError, idyll, updateProps, options, value, time, isAppearList, index,  ...props } = this.props;
+    console.log(options)
     return (
         <div {...props} style={{ margin: '8px 0' }}>
           <div>
