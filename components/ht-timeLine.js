@@ -13,13 +13,13 @@ class HtTimeline extends React.Component {
         const itemSyr = e.target.value || e.target.getAttribute('data-value');
         const item = JSON.parse(itemSyr);
         let that = this;
-        let isDW = true;
+        let isDw = true;
         objList.map(function(v, idx) {
-            if (idx === 0) {
-                isAppearList[0] = true;
-            } else if ((parseFloat(item.time) < v.time) && isDW) {
+            if (idx <= that.props.index) {
+                isAppearList[idx] = list[idx];
+            } else if ((parseFloat(item.time) < v.time) && isDw) {
                 isAppearList[idx] = true;
-                isDW = false;
+                isDw = false;
             } else if (that.state.load && parseFloat(that.state.time) < v.time) {
                 isAppearList[idx] = false;
             } else {
@@ -37,11 +37,11 @@ class HtTimeline extends React.Component {
             isAppearList,
             time: item.time,
             gain: item.gain,
-            isDW,
+            isDw,
         });
     };
   render() {
-    const { hasError, idyll, updateProps, options, value, time, gain, json, isDW, isAppearList, index,  ...props } = this.props;
+    const { hasError, idyll, updateProps, options, value, time, gain, json, isDw, isAppearList, index,  ...props } = this.props;
     return (
         <div {...props} style={{ margin: '8px 0' }}>
           <div>
