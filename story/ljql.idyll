@@ -113,6 +113,10 @@
 [var name: "colorBlue" value: `{ color: "rgb(3, 169, 244)" }` /]
 [var name: "colorGolden" value: `{ color: "goldenrod" }` /]
 [var name: "paddingBottom" value: `{paddingBottom: "20px"}` /]
+[meta
+  title:"垃圾分类小测试"
+  description:"关注垃圾分类,垃圾减量迫在眉睫,垃圾分类刻不容缓。"
+  /]
 [img  src:"https://assets.amzport.com/haitang/app/dati/ljfl.jpg" /]
 [IndexComponents /]
 [Conditional if:` !isSubmit `]
@@ -144,7 +148,7 @@
 [/div]
 [div style: centerNoMargin]
         [QrPic /]
-        ####截屏分享,传播知识
+        ####截屏分享  传播知识
     [/div]
 [Conditional if:` xSquared/5 !== 20 `]
     ###错误的题目及其正确答案

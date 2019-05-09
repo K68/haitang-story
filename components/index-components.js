@@ -15,7 +15,7 @@ class IndexComponents extends React.Component {
           }
       }
     return (
-        <div style={{ height: '60px'}}>
+        <div>
           <div onClick={backHome} style={{ width: '36px', height: '35px', margin: '16px', borderRadius: '5px', position: 'fixed', top:0, right:0, color: '#fafafa', lineHeight: '36px', textAlign: 'center', fontWeight: '800' }}>
                <img src="https://assets.amzport.com/haitang/app/dati/home.png" style={{ width: '100%', height: '100%', backgroundColor: 'transparent' }}/>
           </div>
