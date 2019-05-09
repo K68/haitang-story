@@ -1,27 +1,47 @@
 const React = require('react');
 
 class HtTimeline extends React.Component {
+    state = {
+        time: 0,
+        load: false,
+    };
+
     increment(e) {
         const list =  this.props.isAppearList;
-        list[this.props.index] = true;
-        let that = this;
-        list.map(function(v, idx) {
-            if (that.props.index < idx) {
-                list[idx] = false;
-            }
-        });
+        const isAppearList = [];
+        const objList = this.props.json;
         const itemSyr = e.target.value || e.target.getAttribute('data-value');
         const item = JSON.parse(itemSyr);
+        let that = this;
+        let submitOk = true;
+        objList.map(function(v, idx) {
+            if (idx === 0) {
+                isAppearList[0] = true;
+            } else if ((parseFloat(item.time) < v.time) && add) {
+                isAppearList[idx] = true;
+                submitOk = false;
+            } else if (that.state.load && parseFloat(that.state.time) < v.time) {
+                isAppearList[idx] = false;
+            } else {
+                isAppearList[idx] = list[idx] || false;
+            }
+        });
+        if (!that.state.load) {
+            that.setState({
+                time: that.props.time,
+                load: true,
+            });
+        }
         this.props.updateProps({
             value: item.name,
-            isAppearList: list,
+            isAppearList,
             time: item.time,
             gain: item.gain,
+            submitOk,
         });
     };
   render() {
-    const { hasError, idyll, updateProps, options, value, time, isAppearList, index,  ...props } = this.props;
-    console.log(options)
+    const { hasError, idyll, updateProps, options, value, time, gain, json, submitOk, isAppearList, index,  ...props } = this.props;
     return (
         <div {...props} style={{ margin: '8px 0' }}>
           <div>
