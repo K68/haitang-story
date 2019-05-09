@@ -12,7 +12,10 @@ class HtTest extends React.Component {
         let id = 486;
         const bool = typeof(window)=='undefined';
         if(!bool){
-            id = window.location.pathname.match(/\/story\/(.*?)\//)[1];
+            const macth = window.location.pathname.match(/\/story\/(.*?)\//);
+            if(macth){
+                id = macth[1];
+            }
         }
         const that = this;
         this.queryAnswer(function (jsCg) {
