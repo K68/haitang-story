@@ -179,7 +179,7 @@
             [Display value: `'8."果皮"  属于  ' + right5` /]
         [/Conditional]
         [Conditional if:` radio6 !== right6 `]
-           [Display value: `'9."茶渣"  属于  ' + right16` /]
+           [Display value: `'9."茶渣"  属于  ' + right6` /]
         [/Conditional]
         [Conditional if:` radio15 !== right15 `]
            [Display value: `'10."玻璃杯"  属于  ' + right15` /]
