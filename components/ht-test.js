@@ -45,7 +45,7 @@ class HtTest extends React.Component {
     };
 
   render() {
-    const { hasError, idyll, updateProps,  ...props } = this.props;
+    const { hasError, idyll, updateProps, datiKey,  ...props } = this.props;
     return (
         <div {...props} style={{ display: 'flex', justifyContent: 'space-around', color: '#757575' }}>
             <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>

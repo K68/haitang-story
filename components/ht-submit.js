@@ -27,7 +27,7 @@ class HtSubmit extends React.Component {
     };
 
   render() {
-    const { hasError, idyll, updateProps, ...props } = this.props;
+    const { hasError, idyll, updateProps, submitOk, xSquared, useDate, datiKey,   ...props } = this.props;
     return (
         <div {...props} onClick={this.submit}>
             <span style={{
