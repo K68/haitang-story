@@ -44,13 +44,13 @@
 [var name: "gain20" value: 1 /]
 [var name:'investmentTime' value: 1996.6 /]
 [var name: 'isAppearList' value: `[true]` /]
-[var name: 'startMoney' value: 1600 /]
+[var name: 'startMoney' value: 10000 /]
 [var name: "startDate" value: `new Date().getTime()` /]
 [var name: "useDate" value: 0 /]
 [var name: "isDw" value: false /]
 [var name: "isSubmit" value: false /]
 [derived name:'money' value: `
-    startMoney * (isAppearList[0]? gain1 : 1)
+    startMoney
     *(isAppearList[0]? gain1 : 1)
     *(isAppearList[1]? gain2 : 1)
     *(isAppearList[2]? gain3 : 1)
@@ -72,16 +72,44 @@
     *(isAppearList[18]? gain19 : 1)
     *(isAppearList[19]? gain20 : 1)
 `/]
+[var name: "chart" value: `[]`/]
 [meta
   title:"股票投资小测试"
   description:"关注股票,成就发财之路。"
   /]
-  # 股票投资小测试
+  [IndexComponents /]
+  [HTClcchat
+     value: chart
+      isAppearList: isAppearList
+       data: myData
+        startMoney: startMoney
+          gain1:gain1
+          gain2:gain2
+          gain3:gain3
+          gain4:gain4
+          gain5:gain5
+          gain6:gain6
+          gain7:gain7
+          gain8:gain8
+          gain9:gain9
+          gain10:gain10
+          gain11:gain11
+          gain12:gain12
+          gain13:gain13
+          gain14:gain14
+          gain15:gain15
+          gain16:gain16
+          gain17:gain17
+          gain18:gain18
+          gain19:gain19
+          gain20:gain20
+          /]
+  # 国内股市20年风云变幻
   [HtTest datiKey: "ljfl" /]
 [Conditional if:` isSubmit `]
     [div style: styleDiv]
         [div style: center]
-            ###总分
+            ###总金额
             [div]
                 [Display value:`money` /]元
             [/div]
@@ -97,46 +125,58 @@
             [QrPic /]
             ####截屏分享  传播知识
         [/div]
+    [div style: center]
+      [Chart theme: "material" type:"line" data:chart domain:`[1996, 2019]` range:`[0, money+10000]` /]
+       ####股票投资折线图
+    [/div]
  [/Conditional]
 [Conditional if:` !isSubmit `]
  [Conditional if:` isAppearList[0] === true `]
+
         [Display value: `myData[0].name`/]
+         [img src:"https://assets.amzport.com/haitang/orgres/image/74b30423-4265-4a3c-a1b3-ab30f376ab79" /]
         [HtTimeline isDw: isDw gain:gain1 index: 0 isAppearList: isAppearList time: investmentTime value:radio1 options:`myData[0].options` json: myData /]
  [/Conditional]
 
   [Conditional if:` isAppearList[1] === true `]
 
          [Display value: `myData[1].name`/]
+          [img src:"https://assets.amzport.com/haitang/orgres/image/f55fdf49-4d7c-4997-9cba-d5c4fb6c2928" /]
          [HtTimeline isDw: isDw gain:gain2 index: 1 isAppearList: isAppearList time: investmentTime value:radio2 options:`myData[1].options` json: myData /]
   [/Conditional]
 
   [Conditional if:` isAppearList[2] === true `]
 
          [Display value: `myData[2].name`/]
+         [img src:"https://assets.amzport.com/haitang/orgres/image/66ddd6c7-de8a-4cd7-9135-27df96a59bbd" /]
          [HtTimeline isDw: isDw gain:gain3 index: 2 isAppearList: isAppearList time: investmentTime value:radio3 options:`myData[2].options` json: myData /]
   [/Conditional]
 
   [Conditional if:` isAppearList[3] === true `]
 
          [Display value: `myData[3].name`/]
+         [img src:"https://assets.amzport.com/haitang/orgres/image/21fbba31-ee8d-45af-ac6d-9a40289aab1d" /]
          [HtTimeline isDw: isDw gain:gain4 index: 3 isAppearList: isAppearList time: investmentTime value:radio4 options:`myData[3].options` json: myData /]
   [/Conditional]
 
     [Conditional if:` isAppearList[4] === true `]
 
            [Display value: `myData[4].name`/]
+            [img src:"https://assets.amzport.com/haitang/orgres/image/063a1afd-b545-4541-a538-72b7bfd269eb" /]
            [HtTimeline isDw: isDw gain:gain5 index: 4 isAppearList: isAppearList time: investmentTime value:radio5 options:`myData[4].options` json: myData /]
     [/Conditional]
 
    [Conditional if:` isAppearList[5] === true `]
 
           [Display value: `myData[5].name`/]
+           [img src:"https://assets.amzport.com/haitang/orgres/image/1b6b0138-e439-4397-84e7-d8089bc94ae2" /]
           [HtTimeline isDw: isDw gain:gain6 index: 5 isAppearList: isAppearList time: investmentTime value:radio6 options:`myData[5].options` json: myData /]
    [/Conditional]
 
     [Conditional if:` isAppearList[6] === true `]
 
           [Display value: `myData[6].name`/]
+          [img src:"https://assets.amzport.com/haitang/orgres/image/d25e1b1c-e613-48b4-9767-8370dcb81460" /]
           [HtTimeline isDw: isDw gain:gain7 index: 6 isAppearList: isAppearList time: investmentTime value:radio7 options:`myData[6].options` json: myData /]
     [/Conditional]
 
@@ -144,6 +184,7 @@
     [Conditional if:` isAppearList[7] === true `]
 
             [Display value: `myData[7].name`/]
+              [img src:"https://assets.amzport.com/haitang/orgres/image/d201d80e-13b8-4de9-8252-0c5bbd58fae1" /]
             [HtTimeline isDw: isDw gain:gain8 index: 7 isAppearList: isAppearList time: investmentTime value:radio8 options:`myData[7].options` json: myData /]
      [/Conditional]
 
@@ -151,6 +192,7 @@
     [Conditional if:` isAppearList[8] === true `]
 
            [Display value: `myData[8].name`/]
+            [img src:"https://assets.amzport.com/haitang/orgres/image/194efe78-faa1-4fa6-ac5e-7516b09d9a63" /]
            [HtTimeline isDw: isDw gain:gain9 index: 8 isAppearList: isAppearList time: investmentTime value:radio9 options:`myData[8].options` json: myData /]
     [/Conditional]
 
@@ -158,9 +200,67 @@
      [Conditional if:` isAppearList[9] === true `]
 
                [Display value: `myData[9].name`/]
+                 [img src:"https://assets.amzport.com/haitang/orgres/image/4f3711c7-1ad0-476e-8d53-3d36980712d2" /]
                [HtTimeline isDw: isDw gain:gain10 index: 9 isAppearList: isAppearList time: investmentTime value:radio10 options:`myData[9].options` json: myData /]
       [/Conditional]
-    [/Conditional]
+    [Conditional if:` isAppearList[10] === true `]
+
+                 [Display value: `myData[10].name`/]
+                  [img src:"https://assets.amzport.com/haitang/orgres/image/cdca1c03-d120-4c7a-b834-f9a14e83065f" /]
+                 [HtTimeline isDw: isDw gain:gain11 index: 10 isAppearList: isAppearList time: investmentTime value:radio11 options:`myData[10].options` json: myData /]
+        [/Conditional]
+      [Conditional if:` isAppearList[11] === true `]
+
+                   [Display value: `myData[11].name`/]
+                    [img src:"https://assets.amzport.com/haitang/orgres/image/2f184959-9c39-4784-8490-fac234839f1f" /]
+                   [HtTimeline isDw: isDw gain:gain12 index: 11 isAppearList: isAppearList time: investmentTime value:radio12 options:`myData[11].options` json: myData /]
+          [/Conditional]
+
+[Conditional if:` isAppearList[12] === true `]
+
+    [Display value: `myData[12].name`/]
+     [img src:"https://assets.amzport.com/haitang/orgres/image/1ba11258-ce7a-4316-96c1-559413037f6d" /]
+    [HtTimeline isDw: isDw gain:gain13 index: 12 isAppearList: isAppearList time: investmentTime value:radio13 options:`myData[12].options` json: myData /]
+[/Conditional]
+[Conditional if:` isAppearList[13] === true `]
+
+    [Display value: `myData[13].name`/]
+     [img src:"https://assets.amzport.com/haitang/orgres/image/c1be136c-d458-4461-b690-a90728937461" /]
+    [HtTimeline isDw: isDw gain:gain14 index: 13 isAppearList: isAppearList time: investmentTime value:radio14 options:`myData[13].options` json: myData /]
+[/Conditional]
+[Conditional if:` isAppearList[14] === true `]
+
+    [Display value: `myData[14].name`/]
+    [img src:"https://assets.amzport.com/haitang/orgres/image/1006e207-f3ba-42bd-8d86-d913ac3e97d4" /]
+    [HtTimeline isDw: isDw gain:gain15 index: 14 isAppearList: isAppearList time: investmentTime value:radio15 options:`myData[14].options` json: myData /]
+[/Conditional]
+[Conditional if:` isAppearList[15] === true `]
+
+    [Display value: `myData[15].name`/]
+     [img src:"https://assets.amzport.com/haitang/orgres/image/bbb69eef-0322-410e-955d-727180704a1f" /]
+    [HtTimeline isDw: isDw gain:gain16 index: 15 isAppearList: isAppearList time: investmentTime value:radio16 options:`myData[15].options` json: myData /]
+[/Conditional]
+[Conditional if:` isAppearList[16] === true `]
+
+    [Display value: `myData[16].name`/]
+      [img src:"https://assets.amzport.com/haitang/orgres/image/69d4d5b3-fa08-4c4a-818e-8e7df0d93d4b" /]
+    [HtTimeline isDw: isDw gain:gain17 index: 16 isAppearList: isAppearList time: investmentTime value:radio17 options:`myData[16].options` json: myData /]
+[/Conditional]
+[Conditional if:` isAppearList[17] === true `]
+
+    [Display value: `myData[17].name`/]
+      [img src:"https://assets.amzport.com/haitang/orgres/image/3973813b-1cfc-439f-b71c-7cf43ae28da0" /]
+    [HtTimeline isDw: isDw gain:gain18 index: 17 isAppearList: isAppearList time: investmentTime value:radio18 options:`myData[17].options` json: myData /]
+[/Conditional]
+[Conditional if:` isAppearList[18] === true `]
+
+    [Display value: `myData[18].name`/]
+       [img src:"https://assets.amzport.com/haitang/orgres/image/771ccdf9-2493-4cc8-bf1a-0ee7db49993f" /]
+    [HtTimeline isDw: isDw gain:gain19 index: 18 isAppearList: isAppearList time: investmentTime value:radio19 options:`myData[18].options` json: myData /]
+[/Conditional]
+
+
+[/Conditional]
     [Conditional if:` !isSubmit && isDw `]
         [HtSubmit
                      datiKey:"gpcs"
