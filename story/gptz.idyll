@@ -44,13 +44,13 @@
 [var name: "gain20" value: 1 /]
 [var name:'investmentTime' value: 1996.6 /]
 [var name: 'isAppearList' value: `[true]` /]
-[var name: 'startMoney' value: 1600 /]
+[var name: 'startMoney' value: 1000 /]
 [var name: "startDate" value: `new Date().getTime()` /]
 [var name: "useDate" value: 0 /]
 [var name: "isDw" value: false /]
 [var name: "isSubmit" value: false /]
 [derived name:'money' value: `
-    startMoney * (isAppearList[0]? gain1 : 1)
+    startMoney
     *(isAppearList[0]? gain1 : 1)
     *(isAppearList[1]? gain2 : 1)
     *(isAppearList[2]? gain3 : 1)
@@ -72,10 +72,38 @@
     *(isAppearList[18]? gain19 : 1)
     *(isAppearList[19]? gain20 : 1)
 `/]
+[var name: "chart" value: `[]`/]
+[Display value: chart /]
 [meta
   title:"股票投资小测试"
   description:"关注股票,成就发财之路。"
   /]
+  [HTClcchat
+     value: chart
+      isAppearList: isAppearList
+       data: myData
+        startMoney: startMoney
+          gain1:gain1
+          gain2:gain2
+          gain3:gain3
+          gain4:gain4
+          gain5:gain5
+          gain6:gain6
+          gain7:gain7
+          gain8:gain8
+          gain9:gain9
+          gain10:gain10
+          gain11:gain11
+          gain12:gain12
+          gain13:gain13
+          gain14:gain14
+          gain15:gain15
+          gain16:gain16
+          gain17:gain17
+          gain18:gain18
+          gain19:gain19
+          gain20:gain20
+          /]
   # 股票投资小测试
   [HtTest datiKey: "ljfl" /]
 [Conditional if:` isSubmit `]
@@ -97,6 +125,9 @@
             [QrPic /]
             ####截屏分享  传播知识
         [/div]
+    [div]
+      [Chart theme: "material" type:"line" data:chart domain:`[1999.01, 2019.05]` range:`[0, 10000]` /]
+    [/div]
  [/Conditional]
 [Conditional if:` !isSubmit `]
  [Conditional if:` isAppearList[0] === true `]
@@ -160,6 +191,16 @@
                [Display value: `myData[9].name`/]
                [HtTimeline isDw: isDw gain:gain10 index: 9 isAppearList: isAppearList time: investmentTime value:radio10 options:`myData[9].options` json: myData /]
       [/Conditional]
+    [Conditional if:` isAppearList[10] === true `]
+
+                 [Display value: `myData[10].name`/]
+                 [HtTimeline isDw: isDw gain:gain11 index: 10 isAppearList: isAppearList time: investmentTime value:radio10 options:`myData[10].options` json: myData /]
+        [/Conditional]
+      [Conditional if:` isAppearList[11] === true `]
+
+                   [Display value: `myData[11].name`/]
+                   [HtTimeline isDw: isDw gain:gain12 index: 11 isAppearList: isAppearList time: investmentTime value:radio10 options:`myData[11].options` json: myData /]
+          [/Conditional]
     [/Conditional]
     [Conditional if:` !isSubmit && isDw `]
         [HtSubmit
