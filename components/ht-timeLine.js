@@ -40,8 +40,8 @@ class HtTimeline extends React.Component {
             isDw,
         });
         setTimeout(() => {
-            if (document.getElementsByName(`radio${that.props.index + 1}`)[0]) {
-                document.getElementsByName(`radio${that.props.index + 1}`)[0].scrollIntoView({ behavior: "smooth", block: "center" });
+            if (document.getElementsByName(`radio${that.props.index}`)[0]) {
+                document.getElementsByName(`radio${that.props.index}`)[0].scrollIntoView({ behavior: "smooth", block: "center" });
             }
         }, 200);
     };
