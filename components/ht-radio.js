@@ -17,16 +17,16 @@ class HtRadio extends React.Component {
   render() {
     const { hasError, idyll, updateProps, options, value, stepSitu, step,   ...props } = this.props;
     return (
-        <div {...props} style={{ margin: '8px 0' }}>
+        <div {...props} style={{ margin: '12px 0' }}>
           <div>
             {options.map((item, index) => (typeof item === 'object' ?
-              <div key={item.value + index} style={{ width: '50%', display: 'inline-block', textAlign: 'center' }}>
+              <div key={item.value + index} style={{ width: '50%', display: 'inline-block', textAlign: 'center', minHeight: 36 }}>
                   <input onChange={this.increment.bind(this)} type="radio" name={`radio${step}`} checked={value === item.value} value={item.value} />
                   <label onClick={this.increment.bind(this)} data-value={item.value}><span><span></span></span>{item.value}</label>
                   {item.img ? <img onClick={this.increment.bind(this)} data-value={item.value} style={{ maxWidth: 64, maxHeight: 64, margin: 'auto', }} src={item.img} alt="" /> : null}
               </div>
             :
-              <div key={item + index} style={{ width: '50%', display: 'inline-block', textAlign: 'center' }}>
+              <div key={item + index} style={{ width: '50%', display: 'inline-block', textAlign: 'center', minHeight: 36 }}>
                 <input onChange={this.increment.bind(this)} type="radio" name={`radio${step}`} value={item} /><label><span><span></span></span>{item}</label>
               </div>
             ))}
