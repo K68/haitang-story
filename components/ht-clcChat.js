@@ -20,8 +20,9 @@ class HTClcchat extends React.Component {
                     list.push({x: data[index].time, y: startMoney * 1})
                 }else {
                     let money = startMoney;
-                    for(let j = 0;j<index;j+=1){
-                        money = money*gainList[j];
+                    for(let j = 0;j<=index;j+=1){
+                        const baifenbi = isAppearList[j] ? gainList[j]:1;
+                        money = money*baifenbi;
                     }
                     list.push({x: data[index].time, y: money })
                 }
@@ -45,8 +46,9 @@ class HTClcchat extends React.Component {
                     list.push({x: data[index].time, y: startMoney * 1})
                 }else {
                     let money = startMoney;
-                    for(let j = 0;j<index;j+=1){
-                        money = money*gainList[j];
+                    for(let j = 0;j<=index;j+=1){
+                        const baifenbi = isAppearList[j] ? gainList[j]:1;
+                        money = money*baifenbi;
                     }
                     list.push({x: data[index].time, y: money })
                 }
