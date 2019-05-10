@@ -8,6 +8,11 @@ class HtRadio extends React.Component {
             value: e.target.value || e.target.getAttribute('data-value'),
             stepSitu: stepSitu,
         });
+        setTimeout(() => {
+            if (document.getElementsByName(`radio${stepSitu + 1}`)[0]) {
+                document.getElementsByName(`radio${stepSitu + 1}`)[0].scrollIntoView({ behavior: "smooth", block: "center" });
+            }
+        }, 200);
     };
   render() {
     const { hasError, idyll, updateProps, options, value, stepSitu, step,   ...props } = this.props;
