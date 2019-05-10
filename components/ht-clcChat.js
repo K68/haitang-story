@@ -2,7 +2,6 @@ const React = require('react');
 
 class HTClcchat extends React.Component {
     increment(value) {
-        console.log(value)
         this.props.updateProps({
             value,
         });
