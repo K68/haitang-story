@@ -1,0 +1,173 @@
+[var name: "styleDiv" value: `{display: "flex", justifyContent: "space-around" }` /]
+[var name: "center" value: `{display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column"}` /]
+[var name: "centerNoMargin" value: `{display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column"}` /]
+[data name:'myData' source:'example-data.json' /]
+[var name: "radio1" value: false /]
+[var name: "radio2" value: false /]
+[var name: "radio3" value: false /]
+[var name: "radio4" value: false /]
+[var name: "radio5" value: false /]
+[var name: "radio6" value: false /]
+[var name: "radio7" value: false /]
+[var name: "radio8" value: false /]
+[var name: "radio9" value: false /]
+[var name: "radio10" value: false /]
+[var name: "radio11" value: false /]
+[var name: "radio12" value: false /]
+[var name: "radio13" value: false /]
+[var name: "radio14" value: false /]
+[var name: "radio15" value: false /]
+[var name: "radio16" value: false /]
+[var name: "radio17" value: false /]
+[var name: "radio18" value: false /]
+[var name: "radio19" value: false /]
+[var name: "radio20" value: false /]
+[var name: "gain1" value: 1 /]
+[var name: "gain2" value: 1 /]
+[var name: "gain3" value: 1 /]
+[var name: "gain4" value: 1 /]
+[var name: "gain5" value: 1 /]
+[var name: "gain6" value: 1 /]
+[var name: "gain7" value: 1 /]
+[var name: "gain8" value: 1 /]
+[var name: "gain9" value: 1 /]
+[var name: "gain10" value: 1 /]
+[var name: "gain11" value: 1 /]
+[var name: "gain12" value: 1 /]
+[var name: "gain13" value: 1 /]
+[var name: "gain14" value: 1 /]
+[var name: "gain15" value: 1 /]
+[var name: "gain16" value: 1 /]
+[var name: "gain17" value: 1 /]
+[var name: "gain18" value: 1 /]
+[var name: "gain19" value: 1 /]
+[var name: "gain20" value: 1 /]
+[var name:'investmentTime' value: 1996.6 /]
+[var name: 'isAppearList' value: `[true]` /]
+[var name: 'startMoney' value: 1600 /]
+[var name: "startDate" value: `new Date().getTime()` /]
+[var name: "useDate" value: 0 /]
+[var name: "isDw" value: false /]
+[var name: "isSubmit" value: false /]
+[derived name:'money' value: `
+    startMoney * (isAppearList[0]? gain1 : 1)
+    *(isAppearList[0]? gain1 : 1)
+    *(isAppearList[1]? gain2 : 1)
+    *(isAppearList[2]? gain3 : 1)
+    *(isAppearList[3]? gain4 : 1)
+    *(isAppearList[4]? gain5 : 1)
+    *(isAppearList[5]? gain6 : 1)
+    *(isAppearList[6]? gain7 : 1)
+    *(isAppearList[7]? gain8 : 1)
+    *(isAppearList[8]? gain9 : 1)
+    *(isAppearList[9]? gain10 : 1)
+    *(isAppearList[10]? gain11 : 1)
+    *(isAppearList[11]? gain12 : 1)
+    *(isAppearList[12]? gain13 : 1)
+    *(isAppearList[13]? gain14 : 1)
+    *(isAppearList[14]? gain15 : 1)
+    *(isAppearList[15]? gain16 : 1)
+    *(isAppearList[16]? gain17 : 1)
+    *(isAppearList[17]? gain18 : 1)
+    *(isAppearList[18]? gain19 : 1)
+    *(isAppearList[19]? gain20 : 1)
+`/]
+[meta
+  title:"股票投资小测试"
+  description:"关注股票,成就发财之路。"
+  /]
+  # 股票投资小测试
+  [HtTest datiKey: "ljfl" /]
+[Conditional if:` isSubmit `]
+    [div style: styleDiv]
+        [div style: center]
+            ###总分
+            [div]
+                [Display value:`money` /]元
+            [/div]
+        [/div]
+        [div style: center]
+            ###决策用时
+            [div]
+              [Display value: `useDate` format: "d" /]秒
+            [/div]
+         [/div]
+    [/div]
+    [div style: centerNoMargin]
+            [QrPic /]
+            ####截屏分享  传播知识
+        [/div]
+ [/Conditional]
+[Conditional if:` !isSubmit `]
+ [Conditional if:` isAppearList[0] === true `]
+        [Display value: `myData[0].name`/]
+        [HtTimeline isDw: isDw gain:gain1 index: 0 isAppearList: isAppearList time: investmentTime value:radio1 options:`myData[0].options` json: myData /]
+ [/Conditional]
+
+  [Conditional if:` isAppearList[1] === true `]
+
+         [Display value: `myData[1].name`/]
+         [HtTimeline isDw: isDw gain:gain2 index: 1 isAppearList: isAppearList time: investmentTime value:radio2 options:`myData[1].options` json: myData /]
+  [/Conditional]
+
+  [Conditional if:` isAppearList[2] === true `]
+
+         [Display value: `myData[2].name`/]
+         [HtTimeline isDw: isDw gain:gain3 index: 2 isAppearList: isAppearList time: investmentTime value:radio3 options:`myData[2].options` json: myData /]
+  [/Conditional]
+
+  [Conditional if:` isAppearList[3] === true `]
+
+         [Display value: `myData[3].name`/]
+         [HtTimeline isDw: isDw gain:gain4 index: 3 isAppearList: isAppearList time: investmentTime value:radio4 options:`myData[3].options` json: myData /]
+  [/Conditional]
+
+    [Conditional if:` isAppearList[4] === true `]
+
+           [Display value: `myData[4].name`/]
+           [HtTimeline isDw: isDw gain:gain5 index: 4 isAppearList: isAppearList time: investmentTime value:radio5 options:`myData[4].options` json: myData /]
+    [/Conditional]
+
+   [Conditional if:` isAppearList[5] === true `]
+
+          [Display value: `myData[5].name`/]
+          [HtTimeline isDw: isDw gain:gain6 index: 5 isAppearList: isAppearList time: investmentTime value:radio6 options:`myData[5].options` json: myData /]
+   [/Conditional]
+
+    [Conditional if:` isAppearList[6] === true `]
+
+          [Display value: `myData[6].name`/]
+          [HtTimeline isDw: isDw gain:gain7 index: 6 isAppearList: isAppearList time: investmentTime value:radio7 options:`myData[6].options` json: myData /]
+    [/Conditional]
+
+
+    [Conditional if:` isAppearList[7] === true `]
+
+            [Display value: `myData[7].name`/]
+            [HtTimeline isDw: isDw gain:gain8 index: 7 isAppearList: isAppearList time: investmentTime value:radio8 options:`myData[7].options` json: myData /]
+     [/Conditional]
+
+
+    [Conditional if:` isAppearList[8] === true `]
+
+           [Display value: `myData[8].name`/]
+           [HtTimeline isDw: isDw gain:gain9 index: 8 isAppearList: isAppearList time: investmentTime value:radio9 options:`myData[8].options` json: myData /]
+    [/Conditional]
+
+
+     [Conditional if:` isAppearList[9] === true `]
+
+               [Display value: `myData[9].name`/]
+               [HtTimeline isDw: isDw gain:gain10 index: 9 isAppearList: isAppearList time: investmentTime value:radio10 options:`myData[9].options` json: myData /]
+      [/Conditional]
+    [/Conditional]
+    [Conditional if:` !isSubmit && isDw `]
+        [HtSubmit
+                     datiKey:"gpcs"
+                     submitOk: isDw
+                     useDate: startDate
+                     xSquared: money
+                     date: useDate
+                     value: isSubmit
+                 /]
+      [/Conditional]
