@@ -104,8 +104,14 @@
           gain19:gain19
           gain20:gain20
           /]
-  # 国内股市20年风云变幻
-  [HtTest datiKey: "ljfl" /]
+  [img  src:"https://assets.amzport.com/haitang/orgres/image/0b881af6-ce75-4a9c-94e5-58514ef4442d" /]
+
+  [Conditional if:` !isSubmit `]
+    # 国内股市20年风云变幻
+    本测试您的初始金额是1万,请根据国内20年股市的情况进行投资决策,最终答完10+题,得出最终金额与投资曲线, 每道题目的前面(如: 1996.6)是该年份需要做出什么决策(所有选项都是全仓购买,空仓则跳过)。
+
+  [HtTest datiKey: "gptz" /]
+  [/Conditional]
 [Conditional if:` isSubmit `]
     [div style: styleDiv]
         [div style: center]
@@ -131,6 +137,7 @@
     [/div]
  [/Conditional]
 [Conditional if:` !isSubmit `]
+
  [Conditional if:` isAppearList[0] === true `]
 
         [Display value: `myData[0].name`/]
@@ -139,7 +146,6 @@
  [/Conditional]
 
   [Conditional if:` isAppearList[1] === true `]
-
          [Display value: `myData[1].name`/]
           [img src:"https://assets.amzport.com/haitang/orgres/image/f55fdf49-4d7c-4997-9cba-d5c4fb6c2928" /]
          [HtTimeline isDw: isDw gain:gain2 index: 1 isAppearList: isAppearList time: investmentTime value:radio2 options:`myData[1].options` json: myData /]
