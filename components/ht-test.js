@@ -54,7 +54,7 @@ class HtTest extends React.Component {
             </div>
           <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
               <h3>平均分数</h3>
-              <p>{this.state.grade}分</p>
+              <p>{this.state.grade}</p>
           </div>
             <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
                 <h3>平均用时</h3>

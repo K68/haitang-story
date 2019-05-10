@@ -22,7 +22,7 @@ class HtRadio extends React.Component {
             {options.map((item, index) => (typeof item === 'object' ?
               <div key={item.value + index} style={{ width: '50%', display: 'inline-block', textAlign: 'center' }}>
                   <input onChange={this.increment.bind(this)} type="radio" name={`radio${step}`} checked={value === item.value} value={item.value} />
-                  <label><span><span></span></span>{item.value}</label>
+                  <label onClick={this.increment.bind(this)} data-value={item.value}><span><span></span></span>{item.value}</label>
                   {item.img ? <img onClick={this.increment.bind(this)} data-value={item.value} style={{ maxWidth: 64, maxHeight: 64, margin: 'auto', }} src={item.img} alt="" /> : null}
               </div>
             :
