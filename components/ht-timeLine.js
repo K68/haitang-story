@@ -39,6 +39,11 @@ class HtTimeline extends React.Component {
             gain: item.gain,
             isDw,
         });
+        setTimeout(() => {
+            if (document.getElementsByName(`radio${that.props.index + 1}`)[0]) {
+                document.getElementsByName(`radio${that.props.index + 1}`)[0].scrollIntoView({ behavior: "smooth", block: "center" });
+            }
+        }, 200);
     };
   render() {
     const { hasError, idyll, updateProps, options, value, time, gain, json, isDw, isAppearList, index,  ...props } = this.props;
