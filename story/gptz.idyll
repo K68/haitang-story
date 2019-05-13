@@ -1,6 +1,7 @@
 [var name: "styleDiv" value: `{display: "flex", justifyContent: "space-around" }` /]
 [var name: "center" value: `{display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column"}` /]
 [var name: "centerNoMargin" value: `{display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column"}` /]
+[var name: "chartDiv" value: `{display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column", marginTop: 24}` /]
 [data name:'myData' source:'example-data.json' /]
 [var name: "radio1" value: false /]
 [var name: "radio2" value: false /]
@@ -167,10 +168,10 @@
              [/div]
       [/div]
     [/div]
-        [div style: center]
-              [HTChart data:chart /]
-               ####股票投资折线图
-            [/div]
+        [div style: chartDiv]
+               [HTChart data:chart /]
+               [span style: spanSy]股票投资折线图[/span]
+        [/div]
  [/Conditional]
 [Conditional if:` !isSubmit `]
 
