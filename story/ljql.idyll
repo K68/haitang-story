@@ -113,6 +113,7 @@
 [var name: "colorBlue" value: `{ color: "rgb(3, 169, 244)" }` /]
 [var name: "colorGolden" value: `{ color: "goldenrod" }` /]
 [var name: "paddingBottom" value: `{paddingBottom: "20px"}` /]
+[var name: "spanSy" value: `{ marginTop: 24, fontSize: 16,  marginBottom: 16,fontWeight: 600, fontSize: 14 }` /]
 [meta
   title:"垃圾分类小测试"
   description:"关注垃圾分类,垃圾减量迫在眉睫,垃圾分类刻不容缓。"
@@ -148,7 +149,7 @@
 [/div]
 [div style: centerNoMargin]
         [QrPic /]
-        ####截屏分享  长按识别
+        [span style: spanSy]截屏分享  长按识别[/span]
     [/div]
 [Conditional if:` xSquared/5 !== 20 `]
     ###错误的题目及其正确答案

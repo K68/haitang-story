@@ -72,9 +72,28 @@
     *(isAppearList[18]? gain19 : 1)
     *(isAppearList[19]? gain20 : 1)
 `/]
+[derived name:"imgSrc" value: `
+     (money - startMoney)/startMoney< -0.1?
+                 "https://assets.amzport.com/haitang/orgres/image/e93a5e98-d090-47d0-a688-2e4f24ef2440"
+                :
+                 (money - startMoney)/startMoney > 0.1? "https://assets.amzport.com/haitang/orgres/image/7ef894d0-5fde-48e5-95a1-200af9013312"
+                 :
+                 "https://assets.amzport.com/haitang/orgres/image/33f30a02-3877-44dd-b70f-757312289002"
+ `/]
+ [derived name: "imgName" value: `
+     (money - startMoney)/startMoney< -0.1?
+                     "开源节流"
+                    :
+                     (money - startMoney)/startMoney > 0.1? "稳健是福"
+                     :
+                     "招财进宝"
+ `/]
 [var name: "chart" value: `[]`/]
 [var name: "colorRed" value: `{ color: "red" }` /]
 [var name: "colorGreen" value: `{ color: "#4CAF50" }` /]
+[var name: "imgSy" value: `{maxWidth: "none", maxHeight: "none", width: "100%", margin: 0}` /]
+[var name: "hcfImg" value: `{maxWidth: 130, maxHeight: 130}` /]
+[var name: "spanSy" value: `{ marginTop: 24, fontSize: 16,  marginBottom: 16,fontWeight: 600, fontSize: 14 }` /]
 [meta
   title:"股票投资小测试"
   description:"关注股票,成就发财之路。"
@@ -106,14 +125,28 @@
           gain19:gain19
           gain20:gain20
           /]
-  [img  src:"https://assets.amzport.com/haitang/orgres/image/0b881af6-ce75-4a9c-94e5-58514ef4442d" /]
   [Conditional if:` !isSubmit `]
+    [img  src:"https://assets.amzport.com/haitang/orgres/image/0b881af6-ce75-4a9c-94e5-58514ef4442d" style:`imgSy`/]
     # 国内股市20年风云变幻
     本测试您的初始金额是1万,请根据国内20年股市的情况进行投资决策,最终答完10+题,得出最终金额与投资曲线, 每道题目的前面(如: 1996.6)是该年份需要做出什么决策(所有选项都是全仓购买,空仓则跳过)。
 
   [HtTest datiKey: "gpcs" /]
   [/Conditional]
 [Conditional if:` isSubmit `]
+ [div style: styleDiv]
+    [div style: centerNoMargin]
+            [div style: `{width: 130, height: 130}`]
+                 [img src:`imgSrc`  style: hcfImg/]
+            [/div]
+            [span style: spanSy]
+                [Display value: imgName/]
+            [/span]
+    [/div]
+    [div style: centerNoMargin]
+            [QrPic /]
+            [span style: spanSy]截屏分享  长按识别[/span]
+    [/div]
+ [/div]
     [div style: styleDiv]
         [div style: center]
             ###总金额
@@ -134,10 +167,6 @@
              [/div]
       [/div]
     [/div]
-    [div style: centerNoMargin]
-            [QrPic /]
-            ####截屏分享  长按识别
-        [/div]
         [div style: center]
               [HTChart data:chart /]
                ####股票投资折线图
