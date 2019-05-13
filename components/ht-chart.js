@@ -33,7 +33,7 @@ class HTChart extends React.Component {
                        margin={{top: 5, right: 30, left: 0, bottom: 5}}>
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis type="category" domain={['dataMin', 'dataMax']} dataKey="x" tickFormatter={timestamp => (dateFormat(new Date(timestamp.toString()), 'yyyy.MM'))} axisLine={{ stroke: 'white' }} tickLine={{ stroke: 'white' }} tick={{ fill: 'white', fontSize: '12px' }} />
-                <YAxis domain={[dataMin => (dataMin < 0 ? (dataMin * 1.2).toFixed(2) : -10), dataMax => ((dataMax * 1.2).toFixed(0))]} axisLine={{ stroke: 'white' }} tickLine={false} tick={{ fill: 'white', fontSize: '12px' }} />
+                <YAxis domain={[dataMin => (dataMin < 0 ? (dataMin * 1.2).toFixed(2) : 0), dataMax => ((dataMax * 1.2).toFixed(0))]} axisLine={{ stroke: 'white' }} tickLine={false} tick={{ fill: 'white', fontSize: '12px' }} />
                 <Tooltip
                     labelFormatter={timestamp => (dateFormat(new Date(timestamp.toString()), 'yyyy.MM'))}
                     cursor={{ fill: 'red' }}

@@ -73,6 +73,8 @@
     *(isAppearList[19]? gain20 : 1)
 `/]
 [var name: "chart" value: `[]`/]
+[var name: "colorRed" value: `{ color: "red" }` /]
+[var name: "colorGreen" value: `{ color: "#4CAF50" }` /]
 [meta
   title:"股票投资小测试"
   description:"关注股票,成就发财之路。"
@@ -125,6 +127,12 @@
               [Display value: `useDate` format: "d" /]秒
             [/div]
          [/div]
+        [div style: center]
+             ###投资收益率
+             [div style: `((money - startMoney)/startMoney) > 0 ? colorRed: colorGreen` ]
+               [Display value: `((money - startMoney)/startMoney) * 100`/]%
+             [/div]
+      [/div]
     [/div]
     [div style: centerNoMargin]
             [QrPic /]
