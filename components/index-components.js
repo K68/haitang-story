@@ -27,7 +27,7 @@ class IndexComponents extends React.Component {
                   margin: 16,
                   borderRadius: '50%',
                   position: 'fixed',
-                  bottom: '30%',
+                  bottom: '20%',
                   right: 0,
                   color: '#fafafa',
                   lineHeight: '36px',
