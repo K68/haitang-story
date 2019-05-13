@@ -27,7 +27,7 @@ class QrPic extends React.Component {
     return (
         <div>
             {this.state.imgSrc?
-                <img src={this.state.imgSrc} style={{ maxWidth: '200px',maxHeight: '300px',borderRadius: '8px', display: 'block', margin: '0 auto' }} alt="码" />
+                <img src={this.state.imgSrc} style={{ maxWidth: '130px',maxHeight: '130px',borderRadius: '8px', display: 'block', margin: '0 auto' }} alt="码" />
                  :
                  null
             }

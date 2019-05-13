@@ -19,7 +19,24 @@ class IndexComponents extends React.Component {
       }
     return (
         <div>
-          <div onClick={backHome} style={{ width: '36px', height: '35px', margin: '16px', borderRadius: '5px', position: 'fixed', top:0, right:0, color: '#fafafa', lineHeight: '36px', textAlign: 'center', fontWeight: '800' }}>
+          <div
+              onClick={backHome}
+              style={{
+                  width: 36,
+                  height: 35,
+                  margin: 16,
+                  borderRadius: '50%',
+                  position: 'fixed',
+                  bottom: '30%',
+                  right: 0,
+                  color: '#fafafa',
+                  lineHeight: '36px',
+                  textAlign: 'center',
+                  fontWeight: '800',
+                  boxShadow: '0px 0px 3px 1px #BDBDBD',
+                  padding: '8px',
+                  background: 'white',
+              }}>
                <img src="https://assets.amzport.com/haitang/app/dati/home.png" style={{ width: '100%', height: '100%', backgroundColor: 'transparent' }}/>
           </div>
         </div>

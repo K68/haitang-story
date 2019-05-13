@@ -148,7 +148,7 @@
 [/div]
 [div style: centerNoMargin]
         [QrPic /]
-        ####截屏分享  传播知识
+        ####截屏分享  长按识别
     [/div]
 [Conditional if:` xSquared/5 !== 20 `]
     ###错误的题目及其正确答案
