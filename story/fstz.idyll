@@ -103,7 +103,7 @@
 [var name: "spanSy" value: `{ marginTop: 24, fontSize: 16,  marginBottom: 16,fontWeight: 600, fontSize: 14 }` /]
 [meta
   title:"房市投资小测试"
-  description:"关注股票,成就发财之路。"
+  description:"关注房市,成就发财之路。"
   /]
   [IndexComponents /]
   [HTClcchat
