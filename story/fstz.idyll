@@ -138,8 +138,6 @@
     # 国内房市20年风云变幻
     本测试您的初始金额是1万,请根据国内20年房市的情况进行投资决策,最终答完10+题,得出最终金额与投资曲线, 每道题目的前面(如: 1996.6)是该年份需要做出什么决策。
 
-     [Display value: chart /]
-      [Display value: investmentTime /]
   [HtTest datiKey: "fstz" /]
   [/Conditional]
 [Conditional if:` isSubmit `]
