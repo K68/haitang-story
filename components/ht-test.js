@@ -20,9 +20,9 @@ class HtTest extends React.Component {
         const that = this;
         this.queryAnswer(function (jsCg) {
             that.setState({
-                grade: parseInt(jsCg.data[1], 10),
-                times: parseInt(jsCg.data[2], 10),
-                num: parseInt(jsCg.data[0],10),
+                grade: parseInt(jsCg.data[1] || 0, 10),
+                times: parseInt(jsCg.data[2] || 0, 10),
+                num: parseInt(jsCg.data[0] || 0,10),
             });
         },  `${datiKey}${id}`)
     }
