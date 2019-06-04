@@ -1,5 +1,5 @@
 const React = require('react');
-
+// 对传入的值进行双向绑定处理  方便其显示图表
 class HTClcchat extends React.Component {
     increment(value) {
         this.props.updateProps({
